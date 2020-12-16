@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <title>Сайт арендого агенства</title>
+</head>
+<body>
+<div>
+  <h1><a href="/">Home</a></h1>
+</div>
+<div>
+  <h2>Здравствуй, Пользователь!</h2>
+</div>
+<div class="center">
+  {% for Client in clients %}
+  <br/>
+  <div class = "dblock">
+    <h3 > Имя: <a href="">{{ Client.firstName }}</a></h3>
+    <h3> Фамилия: <a href="">{{ Client.middleName }}</a></h3>
+    <h3> Отчетсво: <a href="">{{ Client.lastName}}</a></h3>
+    <h3> Дата рождения: <a href="">{{ Client.dateOfBirth}}</a></h3>
+    <h3> Серия паспорта: <a href="">{{ Client.passportSeries}}</a></h3>
+    <h3> Номер паспорта: <a href="">{{ Client.passportNumber}}</a></h3>
+    <h3> Номер телефона: {{ Client.phoneNumber}} </h3>
+  </div>
+  <br/>
+  <hr/>
+  {% endfor %}
+
+
+
+</div>
+</body>
+</html>
